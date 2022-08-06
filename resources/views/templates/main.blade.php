@@ -20,8 +20,7 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link " href="/">Inicio</a>
-                    <a class="nav-link " href="/">Libros</a>
-                    <a class="nav-link " href="/">Editoriales</a>
+                    <a class="nav-link " href="{{ route('bookIndex') }}">Libros</a>
                 </div>
             </div>
         </div>
