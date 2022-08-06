@@ -3,7 +3,7 @@
 @section('content')
     <div class="m-5">
         <h3 class="text-center">Formulario de Libro</h3>
-        <form class="mx-5" method="POST" action="/">
+        <form class="mx-5" method="POST" action="{{ route('bookCreate') }}">
             @csrf
             @method('POST')
             <div class="form-group">
@@ -25,6 +25,16 @@
             <div class="form-group">
                 <label for="description">Version</label>
                 <input type="text" class="form-control" id="version" name="version">
+            </div>
+            <div class="form-group my-3">
+                <label for="category_id">Editorial</label>
+                <select class="form-control" id="editorial_id" name="editorial_id">
+                    <option selected disabled>Elija un Opcion</option>
+                    @foreach ($editorials as $editorial)
+                        <option value="{{ $editorial->id }}">
+                            {{ $editorial->name }}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="p-3 text-center">
                 <input type="submit" class="btn btn-primary" placeholder="Guardar"></input>

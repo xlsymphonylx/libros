@@ -15,10 +15,22 @@
                     <th scope="col">ISBN</th>
                     <th scope="col">Autor</th>
                     <th scope="col">Version</th>
+                    <th scope="col">Editorial</th>
+
                 </tr>
             </thead>
             <tbody>
-
+                @foreach ($books as $book)
+                    <tr>
+                        <th scope="row">{{ $book->id }}</th>
+                        <td>{{ $book->name }}</td>
+                        <td>{{ $book->year }}</td>
+                        <td>{{ $book->ISBN }}</td>
+                        <td>{{ $book->author }}</td>
+                        <td>{{ $book->version }}</td>
+                        <td>{{ $book->editorial->name }}</td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
